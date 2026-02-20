@@ -1,0 +1,12 @@
+def validar_correo(EMAIL):
+    import re
+    while True:
+        EMAIL = ("Ingrese el correo electronico: ")
+
+        if re.match("^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$", EMAIL):
+            return EMAIL
+        print ("Correo no valido")
+
+            
+correo = validar_correo()
+print (correo)
