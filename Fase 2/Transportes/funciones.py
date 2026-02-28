@@ -1,6 +1,8 @@
 from clases import *
 import re
 
+# Validar que el codigo tenga el formato XX-00, donde X es una letra mayuscula y 0 es un numero (esto es de la clase de transporte)
+
 def validar_codigo() -> str:
     while True:
         codigo = input("Codigo:").upper()
@@ -17,3 +19,37 @@ def get_int(s:str) -> int:
             return num
         except ValueError:
             print("Valor no valido, ingrese un numero entero")
+
+
+# Validar que el nombre solo contenga letras y un espacio opcional entre dos palabras (esto es de la calse de empleados)
+
+def validar_ID(s:str) -> str:
+    while True:
+        ID = input(f"{s}").upper()
+        if re.match("^[A-Z]{2}\d{4}$", ID):
+            return ID
+        print("Valor no valido, ingrese un ID con el formato: XX0000")
+
+
+def validar_nombre(s:str) -> str:
+    while True:
+        nombre = input(f"{s}")
+        if re.match("^[a-zA-Z]{2,20}( [a-zA-Z]{2,20})?$", nombre):
+            return nombre
+        print("Valor no valido, ingrese solo letras")
+
+
+def validar_apellido(s:str) -> str:
+    while True:
+        apellido = input(f"{s}")
+        if re.match("^[a-zA-Z]{2,20}( [a-zA-Z]{2,20})?$", apellido):
+            return apellido
+        print("Valor no valido, ingrese solo letras")
+
+
+def validar_fecha(s:str) -> str:
+    while True:
+        fecha = input(f"{s}")
+        if re.match("^\d{2}/\d{2}/\d{4}$", fecha):
+            return fecha
+        print("Valor no valido, ingrese una fecha con el formato: dd/mm/yyyy")
