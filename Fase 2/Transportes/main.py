@@ -29,3 +29,27 @@ fecha_nacimiento = validar_fecha("Fecha de nacimiento: ")
 empleado1= empleado(id, nombre, apellido, fecha_nacimiento)
 
 print(empleado1)
+
+camiones = []
+camiones.append(Transporte("aa-00", "VOLVO", 2010))
+camiones.append(Transporte("aa-01", "DODGE", 2023))
+camiones.append(Transporte("aa-02", "MERCEDES", 2025))
+camiones.append(Transporte("aa-03", "VOLVO", 2024))
+camiones.append(Transporte("aa-04", "FORD", 2015))
+camiones.append(Transporte("aa-05", "TOYOTA", 2021))
+
+#regisrar(camiones)
+
+numero = input("Ingrese el numero del camion a mostrar: ")
+encontrado = buscar(numero, camiones)
+
+if encontrado >= 0:
+    print(camiones[encontrado])
+    km = get_int("Ingrese los km a agregar: ")
+    camiones[encontrado].flete(km)
+    print(camiones[encontrado])
+else:    
+    print("Camion no encontrado")
+
+
+

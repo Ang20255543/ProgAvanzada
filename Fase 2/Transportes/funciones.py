@@ -53,3 +53,32 @@ def validar_fecha(s:str) -> str:
         if re.match("^\d{2}/\d{2}/\d{4}$", fecha):
             return fecha
         print("Valor no valido, ingrese una fecha con el formato: dd/mm/yyyy")
+
+
+#Funciones para listas
+def regisrar(c: list) -> None:
+    codigo = validar_codigo()
+    marca = input("Marca: ").upper()
+    modelo = get_int("Modelo: ")
+    c.append(Transporte(codigo, marca, modelo, 0))
+
+def buscar(valor, lista) -> int:
+    for idx in range(len(lista)):
+        if lista[idx].codigo == valor:
+            return idx
+    return -1
+
+
+#Funcion para menu 
+def menu() -> int:
+    while True:
+        print("1. Registrar camion")
+        print("2. Flete del camion")
+        print("3. Eliminar un camion")
+        print("4. Salir")
+        opcion = get_int("Ingrese una opcion: ")
+
+        if opcion in [1, 2, 3, 4]:
+            return opcion
+        print("Opcion no valida, ingrese una opcion del 1 al 4")
+
