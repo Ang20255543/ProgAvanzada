@@ -1,5 +1,8 @@
 from clases import *
-import re
+import re, locale
+from datetime import date
+
+locale.setlocale(locale.LC_ALL, "es_MX")
 
 # Validar que el codigo tenga el formato XX-00, donde X es una letra mayuscula y 0 es un numero (esto es de la clase de transporte)
 
@@ -82,3 +85,14 @@ def menu() -> int:
             return opcion
         print("Opcion no valida, ingrese una opcion del 1 al 4")
 
+def leer_fecha(s: str) -> date:
+    while True:
+        fecha = input(f"Ingrese {s} en formato DD-MM-AAAA: ")
+        try:
+            fecha = date.strptime(fecha, "%d-%m-%Y")
+            return fecha
+        except ValueError as e:
+            print("Fecha no válida. Intente nuevamente, ERROR: ", e)
+
+fecha = leer_fecha("Fecha de vencimiento")
+print(fecha.strftime("%A %d de %B de %Y.").capitalize())
