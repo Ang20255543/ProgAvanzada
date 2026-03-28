@@ -2,7 +2,7 @@
 materias = dict()
 
 while True:
-    materia = input("Ingrese el nombre de la materia: ")
+    materia = input("Ingrese el nombre de la materia: ").lower()
 
     if materia == "x":
         break
