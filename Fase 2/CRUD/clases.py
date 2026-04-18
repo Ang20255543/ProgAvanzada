@@ -13,5 +13,9 @@ class Producto:
         self.existencia = existencia
 
     def __str__(self):
-        salida =  f"Clave: {self.clave}, Nombre: {self.nombre}, Marca: {self.marca}Precio: {self.precio}, Existencia: {self.existencia}" 
+        salida =  f"""Clave: {self.clave}
+Nombre: {self.nombre}
+Marca: {self.marca}
+Precio: {self.precio}
+Existencia: {self.existencia}"""
         return salida
