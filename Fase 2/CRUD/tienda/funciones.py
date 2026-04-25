@@ -41,7 +41,8 @@ def menu() -> int:
 print("Opcion no valida, intente de nuevo")
 
 
-
+##Funciones para realizar las operaciones CRUD  
+##Funcion para buscar un producto por su clave, regresa el indice del producto en la lista o -1 si no lo encuentra
 def buscar_producto(productos:list, clave:int) -> int:
     for i in range (len(productos)):
         if productos[i].clave == clave:
@@ -49,6 +50,7 @@ def buscar_producto(productos:list, clave:int) -> int:
     return -1
 
 
+##Funcion para mostrar un producto por su clave
 def mostrar_producto(productos:list) -> None:
     clave = get_int("Ingrese la clave del producto a mostrar: ")
     indice = buscar_producto(productos, clave)
@@ -60,6 +62,7 @@ def mostrar_producto(productos:list) -> None:
     print(productos[indice])
 
 
+##Funcion para mostrar todos los productos
 def mostrar_productos(productos:Producto) -> None:
     print(f"{'CLAVE': <10} {'NOMBRE': <20} {'MARCA': <15}  {'PRECIO': >11}  {'EXISTENCIA': >12}")
     for p in list(productos):
@@ -68,6 +71,8 @@ def mostrar_productos(productos:Producto) -> None:
 
     print(productos)
 
+
+##Funcion para registrar un nuevo producto, valida que la clave no exista antes de agregarlo a la lista
 def registrar_productos(productos:list) -> None:
     while True:
         clave = get_int("Ingrese la clave del producto: ")
@@ -80,14 +85,10 @@ def registrar_productos(productos:list) -> None:
          existencia = get_int("Ingrese la existencia del producto: ")
 
          productos.append(Producto(clave, nombre, marca, precio, existencia))
+         return
 
 
-        respuesta = input("Quiero agregar otro producto? (s/n)").lower()
-        if respuesta != "s":
-            registrar_productos()
-        else:
-            return
-
+##Funcion para modificar un producto, valida que la clave exista antes de modificarlo
 def modificar_producto(productos:list) -> None:
     clave = get_int("Ingrese la clave del producto a modificar: ")
     indice = buscar_producto(productos, clave)
@@ -106,6 +107,8 @@ def modificar_producto(productos:list) -> None:
     productos[indice].precio = precio
     productos[indice].existencia = existencia
 
+
+##Funcion para eliminar un producto, valida que la clave exista antes de eliminarlo
 def eliminar_producto(productos:list) -> None:
     clave = get_int("Ingrese la clave del producto a eliminar: ")
     indice = buscar_producto(productos, clave)
