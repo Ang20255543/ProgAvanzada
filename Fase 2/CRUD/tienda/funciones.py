@@ -1,4 +1,7 @@
 from clases import Producto
+import os
+import csv
+import json
 
 ## Funciones para validar entradas de datos para ingresar numeros enteros
 def get_int(s:str) -> int:
@@ -24,7 +27,6 @@ def get_float(s:str) -> float:
 
 ## Funciones para mostrar el menu de opciones
 def menu() -> int:
-    while True:
         texto = """Seleccione una opcion:
     1. Mostrar un producto
     2. Mostrar todos los productos
@@ -33,12 +35,6 @@ def menu() -> int:
     5. Eliminar un producto
     6. Salir"""
         print (texto)
-
-        num = get_int("Seleccione una opcion:")
-
-        if 0 < num < 7:
-            return num 
-print("Opcion no valida, intente de nuevo")
 
 
 ##Funciones para realizar las operaciones CRUD  
@@ -118,3 +114,18 @@ def eliminar_producto(productos:list) -> None:
         return
 
     productos.pop(indice)
+
+
+##Funcion para guardar los productos en un archivo de texto, cada producto se guarda en una linea con sus atributos separados por comas
+def guardar_csv(productos:list) -> None:
+    with open("productos.csv", "w", newline="") as archivo:
+        escritor = csv.writer(archivo, delimiter=",")
+        escritor.writerow(["Clave", "Producto", "Marca", "Precio", "Existencia"])
+        for p in productos:
+            escritor.writerow([p.clave, p.nombre, p.marca, p.precio, p.existencia])
+
+
+##Funcion para serializar a json los productos, cada producto se guarda como un diccionario con sus atributos como claves y sus valores como valores
+def guardar_json(productos:list) -> None:
+    with open("productos.json", "w", encoding="utf-8") as archivo:
+        json.dump([p.__dict__ for p in productos], archivo, indent=4, ensure_ascii=False)

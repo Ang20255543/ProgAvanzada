@@ -1,0 +1,44 @@
+[
+    {
+        "clave": 123,
+        "nombre": "Laptop",
+        "marca": "Dell",
+        "precio": 300,
+        "existencia": 0
+    },
+    {
+        "clave": 124,
+        "nombre": "PC",
+        "marca": "Asus",
+        "precio": 400,
+        "existencia": 0
+    },
+    {
+        "clave": 125,
+        "nombre": "Mouse",
+        "marca": "Dell",
+        "precio": 50,
+        "existencia": 0
+    },
+    {
+        "clave": 126,
+        "nombre": "Laptop",
+        "marca": "Lenovo",
+        "precio": 250,
+        "existencia": 0
+    },
+    {
+        "clave": 127,
+        "nombre": "Teclado",
+        "marca": "Apple",
+        "precio": 70,
+        "existencia": 0
+    },
+    {
+        "clave": 12345,
+        "nombre": "Monitor",
+        "marca": "DELL",
+        "precio": 250.0,
+        "existencia": 100
+    }
+]
