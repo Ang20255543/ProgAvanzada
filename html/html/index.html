@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Mi primera web</title>
+</head>
+<body>
+    <!--Esto es para hacer tablas-->
+    <table style="width: 500px;">
+        <thead>
+            <tr>
+            <!--th es para poner cabeceras-->
+                <th>Productos</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <!--td es para poner listas-->
+                <td>Frijol</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td></td>
+            <td>Total: 25</td>
+        </tfoot>
+    </table>
+
+
+
+    <!-- el ul es una lista no ordenada-->
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+
+    <!-- el ol es una lista ordenada-->
+    <ol>
+        <!--podemos poner un values para iniciar la lista -->
+        <li value="20">Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>
+            <ol>
+                <!--podemos agregar listas adientadas en otras listas con indices diferentes
+                POR EJEMPLO LOWER-ALPHA-->
+                <li style="list-style-type: lower-alpha;">sub elemnto 1</li>
+                <li style="list-style-type: lower-alpha;">sub elemnto 2</li>
+                <li style="list-style-type: lower-alpha;">sub elemnto 3</li>
+            </ol>
+        </li>
+    </ol>
+
+
+
+    <!--Los form son formularios-->
+    <form action="/formulario" method="Post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre"/>
+        <br><br>
+        <label for="apellido">apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ponga su apellido"/>
+        <br>
+        ><textarea cols="50" rows="10"name="texto" id="texto" placeholder="Ingrese Comentario"></textarea>
+        <br>
+        <!--Los botones son mas personalizables que un input y puedes agregar mas cosas com una imagen-->
+        <button type="submit">Enviar</button>
+    </form>
+    <h1>Mi primer heading</h1>
+    <h2>Mi segundo heading</h2>
+    <h3>Mi tercer heading</h3>
+    <h4>Mi cuarto heading</h4>
+    <h5>Mi quinto heading</h5>
+    <h6>Angel feliz</h6>
+    <p>Angel esta muy feliz</p>
+    <hr>
+    <h2>Mi segundo heading</h2>
+    <p>Este es un texto mucho <span style ="color:blue">mas largo</span> 
+        para tener que byscar en el algo en conctreto<br> 
+    </p>
+    <!--Este texto es un comenatario y no va a salir en el navegador-->
+    <a target="_blank" href ="https://google.com">ir a google</a> <br>
+    <img src="img/dark.jpg" width="400" height="400">
+</body>
+</html>
