@@ -1,0 +1,53 @@
+#titulo {
+    color:black;
+    text-align: center;
+    font-size: 36px;
+    text-shadow: 4px 4px 4px #000000;
+    font-family: 'Arial', sans-serif;   
+}
+
+.texto {
+    color:blueviolet
+}
+
+div p {
+    color:aquamarine
+}
+
+div h2, div h3{
+    color:brown
+}
+
+* {
+    font-size: 24px;
+}
+
+.color {
+    color: red;
+}
+
+#cuerpo {
+    background-color: rgba(177, 33, 33, 0.5);
+    background-image: url(dark.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: orange;
+}
